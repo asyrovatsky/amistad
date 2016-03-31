@@ -12,8 +12,21 @@ gem 'uglifier', '>= 1.3.0'
 # React
 gem 'react-rails', '~> 1.6.0'
 #Haml
-gem 'haml', '~> 4.0.5'
+# gem 'haml', '~> 4.0.5'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 
+# RefineryCMS
+gem 'refinerycms', git: 'https://github.com/refinery/refinerycms', branch: 'master'
+gem 'quiet_assets', group: :development
+# Add support for searching inside Refinery's admin interface.
+gem 'refinerycms-acts-as-indexed', ['~> 2.0', '>= 2.0.0']
+# Add support for Refinery's custom fork of the visual editor WYMeditor.
+gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
+# The default authentication adapter
+gem 'refinerycms-authentication-devise', '~> 1.0'
+# Refinery news
+gem 'refinerycms-news', github: 'refinery/refinerycms-news', branch: 'master'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -26,5 +39,9 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+end
+
+group :production do
+  gem 'fog'
 end
 
