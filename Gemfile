@@ -42,6 +42,8 @@ group :development do
 end
 
 group :production do
+  # Refinery image from S3	
   gem 'fog'
+  gem 'dragonfly-s3_data_store'
 end
 
