@@ -1,0 +1,12 @@
+- if display_site_bar?
+  #site_bar
+    #site_bar_content{:class => 'clearfix'}
+      #editor_switch= link_to "Edit this page", refinery.admin_edit_page_path(@page.nested_url)
+      #site_bar_branding
+        %span#site_bar_company_name
+          = Refinery::Core.site_name
+
+        = link_to "Log Out",
+          ::Refinery::Core.refinery_logout_path,
+          :id => 'logout' if ::Refinery::Core.refinery_logout_path.present?
+

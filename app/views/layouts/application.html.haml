@@ -1,8 +1,17 @@
+= render "/refinery/html_tag"
+- site_bar = render('/site_bar', :head => true)
 %head
-  %title Amistad
-  = stylesheet_link_tag 'application', media: 'all'  
-  = csrf_meta_tags
-%body
-  = yield
+  = render "/head"
+  = render "/refinery/head"
 
-  = render('/layouts/scripts')
+%body{:id => "#{canonical_id @page}"}
+  = site_bar
+  #page_container
+    %header#header
+      = render "/refinery/header"
+    %section#page
+      = yield
+    %footer
+      = render "/refinery/footer"
+
+= render "/scripts"

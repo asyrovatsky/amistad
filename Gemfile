@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # React
 gem 'react-rails', '~> 1.6.0'
 #Haml
-# gem 'haml', '~> 4.0.5'
+gem 'haml'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
