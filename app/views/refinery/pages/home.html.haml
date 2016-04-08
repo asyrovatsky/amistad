@@ -1,6 +1,10 @@
 %section.hero
-  = image_tag("amistad-hero")
-= render '/refinery/content_page', {hide_sections: [:body_content_title]}
+  = image_tag("hero")
+.top-_section
+  - @page.children.where.not(slug: "page-not-found").each do |section|
+    = render '/content_page', {hide_sections: [:body_content_title], page: section}
+.main-content
+  = render '/content_page', {hide_sections: [:body_content_title], page: @page}
 
 %section#side_panel
   - @items = Refinery::News::Item.latest(5)

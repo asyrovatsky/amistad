@@ -1,0 +1,30 @@
+@import "layouts/*";
+
+#site_bar {
+  @include container;
+
+  padding: 5px;
+  background-color: $site_bar-bg;
+  border: $site_bar-border;
+
+  #editor_switch {
+    @include span(6);
+  }
+
+  #site_bar_branding {
+    @include span(6 last);
+
+    #site_bar_company_name {
+
+    }
+    #logout {
+
+    }
+  }
+}
+
+footer {
+  background-color: $footer-bg;
+  border: $footer-border;
+}
+
